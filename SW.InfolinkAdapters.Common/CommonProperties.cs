@@ -33,6 +33,9 @@ namespace SW.InfolinkAdapters
         public const string RedirectionUrl = "RedirectionUrl";
         public const string From = "From";
         public const string To = "To";
+        public const string OtherTo = "OtherTo";
+        public const string Cc = "Cc";
+        public const string Bcc = "Bcc";
         public const string Subject = "Subject";
         public const string InputModel = "InputModel";
         //public const string FileNamePrefix = "FileNamePrefix";

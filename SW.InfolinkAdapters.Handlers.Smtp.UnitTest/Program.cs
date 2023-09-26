@@ -16,18 +16,22 @@ public class SmtpTests
         Runner.MockRun(handler, new ServerlessOptions(),
             new Dictionary<string, string>
             {
-                { "Host", "" },
-                { "From", "" },
-                { "Password", "" },
-                { "Port", "" },
+                { "Host", "smtp.ae.aramex.com" },
+                { "From", "InfolinkEmailAgent@aramex.com" },
+                { "Password", "*7fyDnJIgi*b" },
+                { "Port", "25" },
+                {"To", "fadisa@aramex.com" },
+                {"OtherTo", "fadi.samara@hotmail.com" },
             });
 
         var rs = await handler.Handle(new XchangeFile(JsonConvert.SerializeObject(new InputModel
         {
             Subject = "Smtp test",
             Body = "Hi",
-            To = ""
-        })));
+            To = "fadisa@aramex.com",
+            OtherTo= new List<string> { "fadi.samara@hotmail.com"},          
+
+        }))); ;
 
         Assert.AreEqual("", rs.Data);
     }
